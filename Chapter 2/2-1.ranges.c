@@ -9,8 +9,7 @@ void computation (void);
 
 void main()
 {
-	
-	//run header and computation functions, compare
+	//run header and computation functions for comparison
 	printf("header:\n");
 	header();
 	printf("\n\n");
@@ -18,14 +17,12 @@ void main()
 	computation();
 	
 	system("pause");
-	
 }
 
-// header: determine the ranges of char, short, int, and long (signed and unsigned) by printing
-// values from standard headers, output them to the screen
+// header: determine the ranges of char, short, int, long (signed and unsigned), float, and double
+// by printing values from standard headers, output them to the screen
 void header (void)
 {
-	
 	// prints the range of a char from least to greatest, then prints its unsigned range
 	// (size of 8 bits)
 	printf("char range: %d to %d, thus unsigned range is %u\n", SCHAR_MIN, SCHAR_MAX, UCHAR_MAX);
@@ -37,15 +34,19 @@ void header (void)
 	printf("integer range: %d to %d, thus unsigned range is %u\n", INT_MIN, INT_MAX, UINT_MAX);
 	// prints the range of a long integer from least to greatest, then prints its unsigned range
 	// (size of 32 bits)
-	printf("long range: %f to %d, thus unsigned range is %u\n", DBL_MAX, LONG_MAX, ULONG_MAX);
-	
+	printf("long range: %d to %d, thus unsigned range is %u\n", LONG_MIN, LONG_MAX, ULONG_MAX);
+	// prints the range of a single-precision float from least to greatest, then prints its unsigned range
+	// (size of 32 bits, not easily visible like others because of the imprecision of floating point arithmetic)
+	printf("float range: %.3f to %.3f, no unsigned form\n", -FLT_MAX, FLT_MAX);
+	// prints the range of a double-precision float from least to greatest, then prints its unsigned range
+	// (size of 64 bits, not easily visible like others because of the imprecision of floating point arithmetic)
+	printf("double range: %.3f to %.3f, no unsigned form\n", -DBL_MAX, DBL_MAX);
 }
 
 // computation: determine the ranges of char, short, int, and long (signed and unsigned) by 
 // direct computation of these values, output them to the screen
 void computation (void)
 {
-
 	// char variable declaration
 	char char_min, char_max;
 	unsigned char uchar_max;
@@ -58,60 +59,89 @@ void computation (void)
 	// long integer variable declaration
 	long long_min, long_max;
 	unsigned long ulong_max;
-	// float variable declaration
+	// float variable declaration (+1 initialization)
 	float float_min, float_max;
-	// double variable declaration
+	float_min = 0;
+	// double variable declaration (+1 initialization)
 	double double_min, double_max;
-	// misc. declaration
-	int power = 1250;
+	double_min = 0;
+	// misc. declaration + initialization
+	int power = 0;
+	float infinitycheck;
+	double limitcheck = 1;
 	
 	// determine the min and max values of each variable by continuously incrementing them until
-	// they overflow; once this happens, determine the range between these variables to
-	// acknowledge their unsigned ranges
+	// they overflow; once this happens, determine the range between these variables to acknowledge
+	// their unsigned ranges
 	// (char's calculations)
-		//for (char_max = 0; char_max <= 0; char_max--);
-		//char_min = char_max + 1;
-		//uchar_max = char_max - char_min;
+		for (char_max = 0; char_max <= 0; char_max--);
+		char_min = char_max + 1;
+		uchar_max = char_max - char_min;
 	// (short's calculations)
-		//for (short_max = 0; short_max <= 0; short_max--);
-		//short_min = short_max + 1;
-		//ushort_max = short_max - short_min;
+		for (short_max = 0; short_max <= 0; short_max--);
+		short_min = short_max + 1;
+		ushort_max = short_max - short_min;
 	// (int's calculations)
-		//for (int_min = 0; (int_min - 1) < int_min; int_min--);
-		//int_max = int_min - 1;
-		//uint_max = int_max - int_min;
+		for (int_min = 0; (int_min - 1) < int_min; int_min--);
+		int_max = int_min - 1;
+		uint_max = int_max - int_min;
 	// (long's calculations)
-		//for (long_min = 0; (long_min - 1) < long_min; long_min--);
-		//long_max = long_min - 1;
-		//ulong_max = long_max - long_min;
-	double_min = -1;
-	int kill = 0;
-	int extra = 0;
+		for (long_min = 0; (long_min - 1) < long_min; long_min--);
+		long_max = long_min - 1;
+		ulong_max = long_max - long_min;
+	
+	// since float variables take on a value representing infinity instead of overflowing,
+	// a different strategy is taken...
+	// these variables can hold some very large values, and due to the magic of floating point 
+	// arithmetic, these values grow further apart as we move away from zero; decrementing each
+	// by 1 until a limit is reached would not only take obscene amounts of time, but is also
+	// literally impossible, as the values would eventually be so far apart that attempting to
+	// decrement them by 1 would just reproduce the operand.
+	// to nullify this, i attempt to decrease the value of the variable by powers of two starting
+	// from zero. the calculation takes less time and it is certain that a limit (where the power of
+	// two cannot be raised without having the variable reach infinity and where the variable cannot
+	// be decreased by the current power without reproducing a value due to imprecision) will be reached. 
+	// i use isinf() to check if the current calculation will reach infinity; if so, the power of two is
+	// decreased, and if not, it is increased. limitcheck checks to see if a point where the variable
+	// cannot be decremented any further (without reaching infinity) has been reached. the variable
+	// will be caught in a loop of having its value reproduced in such a case; it will equal limitcheck
+	// at this point, and so, the loop will break. when this happens, the variable has reached its minimum.
 	// (float's calculations)
-	printf("before first: %f, %f, %d\n", double_min, double_min - pow(2, 1250), isinf(double_min - pow(2, 1250)));
-	while ((float_min - 1.0) < float_min)
+	while (float_min != limitcheck)
 	{
-		kill = power;
-		printf("first: \n%f, \n%f, \n%d, \n%d, %d, %.f, %.f\n", double_min, double_min - (pow(2, power) - extra), power, kill, extra, pow(2, 970), pow(2, 969) + extra);
-		
-		if (isinf(double_min - pow(2, power)) == 1)
-		{
-			kill = power;
+		// (infinitycheck accounts for weird behaviour between the isinf() function and floats, which i
+		// suspect is due to isinf() specifically checking if a double (rather than a float) would reach
+		// infinity when given an expression to evaluate; when it is given a single float like infinitycheck,
+		// this does not happen -> this occurs if this loop is set up the same way as the double's)
+		infinitycheck = float_min - pow(2, power);
+		if (isinf(infinitycheck))
 			power--;
-		}
 		else
-			{
-				if (kill == power)
-					extra++;
-			double_min = double_min - pow(2, power) - extra;
-			}
-			
+		{
+			limitcheck = float_min;
+			float_min = float_min - pow(2, power);
+			power++;
+		}
 	}
-	double_max = double_min - 1;
-	printf("second: %f, %d\n", double_min, power);
-	printf("third: %f, %d\n", double_min - 1.0, isinf(double_min - pow(2, power)));
-	
-	
+	float_max = -float_min;
+
+	//reset power and limitcheck
+	power = 0;
+	limitcheck = 1;
+
+	// (double's calculations)
+	while (double_min != limitcheck)
+	{
+		if (isinf(double_min - pow(2, power)))
+			power--;
+		else
+		{
+			limitcheck = double_min;
+			double_min = double_min - pow(2, power);
+			power++;
+		}
+	}
+	double_max = -double_min;
 	
 	// prints the range of a char from least to greatest, then prints its unsigned range
 	// (size of 8 bits)
@@ -125,5 +155,11 @@ void computation (void)
 	// prints the range of a long integer from least to greatest, then prints its unsigned range
 	// (size of 32 bits)
 	printf("long range: %d to %d, thus unsigned range is %u\n", long_min, long_max, ulong_max);
+	// prints the range of a single-precision float from least to greatest, then prints its unsigned range
+	// (size of 32 bits, not easily visible like others because of the imprecision of floating point arithmetic)
+	printf("float range: %.3f to %.3f, no unsigned form\n", float_min, float_max);
+	// prints the range of a double-precision float from least to greatest, then prints its unsigned range
+	// (size of 64 bits, not easily visible like others because of the imprecision of floating point arithmetic)
+	printf("double range: %.3f to %.3f, no unsigned form\n", double_min, double_max);
 	
 }
