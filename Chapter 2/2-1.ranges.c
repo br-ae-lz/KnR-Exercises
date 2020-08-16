@@ -25,16 +25,16 @@ void header (void)
 {
 	// prints the range of a char from least to greatest, then prints its unsigned range
 	// (size of 8 bits)
-	printf("char range: %d to %d, thus unsigned range is %u\n", SCHAR_MIN, SCHAR_MAX, UCHAR_MAX);
+	printf("char range: %d to %d, thus unsigned range is 0 to %u\n", SCHAR_MIN, SCHAR_MAX, UCHAR_MAX);
 	// prints the range of a short integer from least to greatest, then prints its unsigned range
 	// (size of 16 bits)
-	printf("short range: %d to %d, thus unsigned range is %u\n", SHRT_MIN, SHRT_MAX, USHRT_MAX);
+	printf("short range: %d to %d, thus unsigned range is 0 to %u\n", SHRT_MIN, SHRT_MAX, USHRT_MAX);
 	// prints the range of an integer from least to greatest, then prints its unsigned range
 	// (size of 32 bits)
-	printf("integer range: %d to %d, thus unsigned range is %u\n", INT_MIN, INT_MAX, UINT_MAX);
+	printf("integer range: %d to %d, thus unsigned range is 0 to %u\n", INT_MIN, INT_MAX, UINT_MAX);
 	// prints the range of a long integer from least to greatest, then prints its unsigned range
 	// (size of 32 bits)
-	printf("long range: %d to %d, thus unsigned range is %u\n", LONG_MIN, LONG_MAX, ULONG_MAX);
+	printf("long range: %d to %d, thus unsigned range is 0 to %u\n", LONG_MIN, LONG_MAX, ULONG_MAX);
 	// prints the range of a single-precision float from least to greatest, then prints its unsigned range
 	// (size of 32 bits, not easily visible like others because of the imprecision of floating point arithmetic)
 	printf("float range: %.3f to %.3f, no unsigned form\n", -FLT_MAX, FLT_MAX);
@@ -145,16 +145,16 @@ void computation (void)
 	
 	// prints the range of a char from least to greatest, then prints its unsigned range
 	// (size of 8 bits)
-	printf("char range: %d to %d, thus unsigned range is %u\n", char_min, char_max, uchar_max);
+	printf("char range: %d to %d, thus unsigned range is 0 to %u\n", char_min, char_max, uchar_max);
 	// prints the range of a short integer from least to greatest, then prints its unsigned range
 	// (size of 16 bits)
-	printf("short range: %d to %d, thus unsigned range is %u\n", short_min, short_max, ushort_max);
+	printf("short range: %d to %d, thus unsigned range is 0 to %u\n", short_min, short_max, ushort_max);
 	// prints the range of an integer from least to greatest, then prints its unsigned range
 	// (size of 32 bits)
-	printf("integer range: %d to %d, thus unsigned range is %u\n", int_min, int_max, uint_max);
+	printf("integer range: %d to %d, thus unsigned range is 0 to %u\n", int_min, int_max, uint_max);
 	// prints the range of a long integer from least to greatest, then prints its unsigned range
 	// (size of 32 bits)
-	printf("long range: %d to %d, thus unsigned range is %u\n", long_min, long_max, ulong_max);
+	printf("long range: %d to %d, thus unsigned range is 0 to %u\n", long_min, long_max, ulong_max);
 	// prints the range of a single-precision float from least to greatest, then prints its unsigned range
 	// (size of 32 bits, not easily visible like others because of the imprecision of floating point arithmetic)
 	printf("float range: %.3f to %.3f, no unsigned form\n", float_min, float_max);
