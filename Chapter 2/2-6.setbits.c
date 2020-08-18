@@ -15,14 +15,13 @@ void main ()
     int p = 4;
     int n = 3;
 
-    unsigned result = setbits(x, 4, 3, y);
+    unsigned result = setbits(x, p, n, y);
 
     // print the result, which should be 116...
     // (.101 are the bits selected from y, they fit into x at ...0 01.. , so x is 0111 0100)
     printf("%d\n", result);
 
     system("pause");
-
 }
 
 // setbits: return x with n bits to the right of position p set to the rightmost n bits of y
