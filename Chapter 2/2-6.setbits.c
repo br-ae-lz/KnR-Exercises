@@ -25,7 +25,7 @@ void main ()
 
 }
 
-// setbits: set n bits of x to the right of position p to to the rightmost n bits of y
+// setbits: return x with n bits to the right of position p set to the rightmost n bits of y
 unsigned setbits(unsigned x, int p, int n, unsigned y)
 {
     // initialize a integer that consists only of 1's in the position and range specified by
