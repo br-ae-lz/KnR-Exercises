@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-// Question prompt is as follows:
+// Prompt is as follows:
 // Write a function invert(x,p,n) that returns x with the n bits that begin at
 // position p inverted (i.e., 1 changed into 0 and vice versa), leaving the others unchanged. 
 

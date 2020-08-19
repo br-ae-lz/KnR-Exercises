@@ -5,6 +5,12 @@
 #define MAXDISPLAYLINE 111 	// max display line length
 #define TABSTOP 8			// characters between tab stops
 
+// Prompt is as follows:
+// Write a program to "fold" long input lines into two or more shorter lines after
+// the last non-blank character that occurs before the n-th column of input. Make sure your
+// program does something intelligent with very long lines, and if there are no blanks or tabs
+// before the specified column. 
+
 void foldLine (char m[], char n[]);
 
 int c, i;
@@ -21,9 +27,9 @@ void main()
 	// add null to mark end of input
 	in[i] = '\0';
 	
-	//run foldLine
+	// run foldLine
 	foldLine(in, out);
-	//print output
+	// print output
 	printf("%s", out);
 	
 	system("pause");
@@ -60,7 +66,7 @@ void foldLine (char in[], char out[])
 		
 		// if there is a tab, turn its characters into blanks to continuously check if they max
 		// out the display line; if so, add a new line and continue to add blanks
-		// (I get this is explicitly said to not be necessary in the exercise's description,
+		// (I get this is implicitly said to not be necessary in the exercise's description,
 		// and that it doesn't even mirror how tabs work... I just wanted to try it out)
 		else if (in[i] == '\t')
 		{

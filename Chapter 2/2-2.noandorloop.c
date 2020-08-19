@@ -1,17 +1,20 @@
 #include "stdio.h"
 #include "stdlib.h"
 
+// Prompt is as follows:
+// Write a loop equivalent to the for loop above without using && or ||. 
+	
+// commented version of original loop; must be remade without use of && or ||
+//for (i=0; i < lim-1 && (c=getchar()) != '\n' && c != EOF; ++i)
+	//s[i] = c;
+
 void main()
 {
-	//declaration of things needed for the original and remade loop
+	// declaration of things needed for the original and remade loop
 	int c, i, lim;
-	//(quick initialization of lim)
+	// (quick initialization of lim)
 	lim = 10;
 	char s[lim];
-	
-	// commented version of original loop; must be remade without use of && or ||
-	//for (i=0; i < lim-1 && (c=getchar()) != '\n' && c != EOF; ++i)
-		//s[i] = c;
 		
 	// declaration and initialization of "switch" variables; check all while loop parameters in an
 	// appropriate order to ensure none of them are left behind

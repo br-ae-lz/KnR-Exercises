@@ -4,12 +4,17 @@
 #include "float.h"
 #include "math.h"
 
+// Prompt is as follows:
+// Write a program to determine the ranges of char, short, int, and long variables, both signed 
+// and unsigned, by printing appropriate values from standard headers and by direct computation. 
+// Harder if you compute them: determine the ranges of the various floating-point types. 
+
 void header (void);
 void computation (void);
 
 void main()
 {
-	//run header and computation functions for comparison
+	// run header and computation functions for comparison
 	printf("header:\n");
 	header();
 	printf("\n\n");
@@ -125,7 +130,7 @@ void computation (void)
 	}
 	float_max = -float_min;
 
-	//reset power and limitcheck
+	// reset power and limitcheck
 	power = 0;
 	limitcheck = 1;
 

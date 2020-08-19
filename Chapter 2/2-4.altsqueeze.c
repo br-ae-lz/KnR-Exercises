@@ -1,6 +1,9 @@
 #include "stdio.h"
 #include "stdlib.h"
-#define MAXLENGTH 1000
+
+// Prompt is as follows:
+// Write an alternative version of squeeze(s1,s2) that deletes each character in
+// s1 that matches any character in the string s2. 
 
 void altsqueeze(char s1[], char s2[]);
 

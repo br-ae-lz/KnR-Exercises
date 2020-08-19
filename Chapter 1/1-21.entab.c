@@ -1,8 +1,14 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-#define MAXLINE 1000 //maximum input line length
+#define MAXLINE 1000 // maximum input line length
 #define TABSTOP 8
+
+// Prompt is as follows:
+// Write a program entab that replaces strings of blanks by the minimum number of tabs
+// and blanks to achieve the same spacing. Use the same tab stops as for detab. When
+// either a tab or a single blank would suffice to reach a tab stop, which should be given
+// preference? 
 
 void entab (char d[], char e[]);
 
@@ -71,7 +77,7 @@ void entab (char in[], char out[])
 			i--;
 		}
 		
-		//if there are excess blanks that cannot be covered by a tab, copy them to the output
+		// if there are excess blanks that cannot be covered by a tab, copy them to the output
 		if (blankCount != 0)
 		{
 			// undo previous preparation for loop
@@ -89,7 +95,7 @@ void entab (char in[], char out[])
 		// if tab or blank process hasn't been gone through, copy input to output as is
 		if (out[t] != '\t' && ' ')
 		{
-			//if tab is placed in output, then reset count to next tab stop
+			// if tab is placed in output, then reset count to next tab stop
 			if (in[i] == '\t')
 				charCount = 0;
 				
