@@ -14,10 +14,10 @@ void itob(int n, char s[], int b);
 
 void main()
 {
-    // initialize a string and use it to print itob's output for a hexidecimal number
-    // (output should be 5D93E)
+    // initialize a string and use it to print itob's output for a hexadecimal number
+    // (output should be -5D93E)
     char s[MAXLINE];
-    itob(383294, s, 16);
+    itob(-383294, s, 16);
     printf("%s\n", s);
     
     system("pause");
@@ -38,7 +38,11 @@ void reverse(char s[])
 void itob(int n, char s[], int b)
 {
     int i = 0;
-    int result;
+    int result, sign;
+    
+    // record sign of number, turn number positive for calculation
+    if ((sign = n) < 0)
+        n = -n;
 
     // complete loop once to output a value of zero if necessary; check the modulo of the
     // number and the base and place an appropriate character to represent it into the
@@ -51,6 +55,9 @@ void itob(int n, char s[], int b)
         n /= b;
     } while (n != 0);
 
+    // if negative sign need be included, do so
+    if (sign < 0)
+        s[i++] = '-';
     // top off string with null character, reverse output characters for accuracy
     s[i] = '\0';
     reverse(s);
