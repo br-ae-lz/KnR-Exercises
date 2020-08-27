@@ -14,7 +14,7 @@ double sciatof(char s[]);
 void main()
 {
     // initialise a string to test sciatof with; output result, which should be 0.00012345
-    char s[MAXLINE] = "123.45e-6\0";
+    char s[MAXLINE] = "123.45E-6\0";
     printf("%.8f\n", sciatof(s));
 
     system("pause");
@@ -48,8 +48,9 @@ double sciatof(char s[])
     // in a string to recurse through this function with; the returned double will be
     // used to multiply power by the power of 10 represented by the exponent if its sign
     // were flipped (sign is flipped here because the return statement divides by power)
-    else if (s[i++] == 'e' || s[i++] == 'E')
+    else if (s[i] == 'e' || s[i] == 'E')
     {
+        i++;
         for (e = 0; s[i] != '\0' && (isdigit(s[i]) || s[i] == '-' || s[i] == '+' || s[i] == '.'); e++, i++)
             expstr[e] = s[i];
         expstr[e] = '\0';
@@ -65,8 +66,9 @@ double sciatof(char s[])
 
     // exact same process as the "else if" statement above -> alter power so the returned 
     // value accounts for the influence of the scientific notation exponent
-    if (s[i++] == 'e' || s[i++] == 'E')
+    if (s[i] == 'e' || s[i] == 'E')
     {
+        i++;
         for (e = 0; s[i] != '\0' && (isdigit(s[i]) || s[i] == '-' || s[i] == '+' || s[i] == '.'); e++, i++)
             expstr[e] = s[i];
         expstr[e] = '\0';
