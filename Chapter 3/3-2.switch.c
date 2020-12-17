@@ -66,7 +66,6 @@ void escape(char s[], char t[])
     // and appropriate letter (ensure this addition of one character doesn't exceed array length)
     for (int i = 0; j < MAXLINE - 1 && t[i] != '\0'; i++)
     {
-        printf("%d\n", j);
         switch(t[i]) {
         case '\n':
             s[j++] = '\\';
