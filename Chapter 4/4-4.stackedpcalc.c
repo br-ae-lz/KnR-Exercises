@@ -122,6 +122,8 @@ int getop(char s[])
     if (!isdigit(c) && c != '.' && c != '-')    // proceed past hyphens
         return c;   // not a number
     
+    i = 0;
+
     // return c if it is a hyphen not denoting a negative number
     if (c == '-')
     {
@@ -129,11 +131,13 @@ int getop(char s[])
         c = getch();    
         ungetch(c);
 
-        if (!isdigit(c) || c == '.')
+        if (!isdigit(c) && c != '.')
             return '-';
+        // prepare for fractions as you would with non-negatives
+        if (c == '.')
+            s[++i] = c = getch();
     }
 
-    i = 0;
     if (isdigit(c)) // collect integer part
         while (isdigit(s[++i] = c = getch()))
             ;
