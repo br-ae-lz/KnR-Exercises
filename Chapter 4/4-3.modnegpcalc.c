@@ -46,7 +46,10 @@ void main()
             break;
         case '%':   // modulo support
             op2 = pop();
-            push((int) pop() % (int) op2);
+            if (op2 != 0.0)
+                push((int) pop() % (int) op2);
+            else
+                printf("error: zero divisor\n");
             break;
         case '\n':
             printf("\t%.8g\n", pop());
