@@ -100,7 +100,7 @@ int getop(char s[])
         c = getch();    
         ungetch(c);
 
-        if (!isdigit(c))
+        if (!isdigit(c) || c == '.')
             return '-';
     }
 
