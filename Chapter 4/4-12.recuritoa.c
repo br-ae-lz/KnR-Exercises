@@ -12,7 +12,7 @@ void recuritoa(int, char[]);
 
 void main()
 {
-    // tests recuritoa; if successful, prints -2209534 to the screen
+    // tests recuritoa; if successful, prints "-2209534" to the screen
     int n = -2209534;
     char s[MAXLEN];
 
