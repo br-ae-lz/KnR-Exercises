@@ -27,7 +27,7 @@ int getint(int *pn)
 {
     int c, sign, storesign;
 
-    //skip white space
+    // skip white space
     while (isspace(c = getch())) 
         ;
 
