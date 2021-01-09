@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 #define MAXLINE 1000
 
@@ -19,7 +18,7 @@ void strncopy(char *, char *, int);
 char * strncat(char *, char *, int);
 int strncmp(char *, char *, int);
 
-void main()
+int main()
 {
     // tests strncopy; if successful, prints "hah" to the screen
     char s1[MAXLINE] = "";
@@ -27,22 +26,22 @@ void main()
 
     strncopy(s1, t1, 3);
     printf("%s\n", s1);
-    system("pause");
+    getchar();
 
     // tests strncat; if successful, prints "hello" to the screen
     char s2[MAXLINE] = "hell";
     char t2[MAXLINE] = "o!";
 
     printf("%s\n", strncat(s2, t2, 1));
-    system("pause");
+    getchar();
 
     // tests strncmp; if successful, prints "0\n-10" to the screen
     char s3[MAXLINE] = "hee";
-    char t3[MAXLINE] = "hoo";
+    char t3[MAXLINE] = "heo";
 
     printf("%d\n", strncmp(s3, t3, 1));
-    printf("%d\n", strncmp(s3, t3, 3));
-    system("pause");
+    printf("%d\n", strncmp(s3, t3, 2));
+    return 0;
 }
 
 // strncopy: copy at most n characters of t to s
@@ -77,7 +76,7 @@ char *strncat(char *s, char *t, int n)
 int strncmp(char *s, char *t, int n)
 {
     // move along path towards a 0 return for as long as strings match
-    for(; n > 0 && *s == *t; n--, s++, t++)
+    for(; --n > 0 && *s == *t; s++, t++)
         if (*s == '\0')
             return 0;
     // if chars ever differ, return their difference
