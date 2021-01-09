@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 // Prompt is as follows:
@@ -8,14 +7,14 @@
 
 void recurrev(char []);
 
-void main()
+int main()
 {
     // tests recurrev; if successful, prints "dlroW olleH" to the screen
     char s[] = "Hello World\0";
     recurrev(s);
     printf("%s\n", s);
 
-    system("pause");
+    return 0;
 }
 
 // recurrev: recursively reverse a string s

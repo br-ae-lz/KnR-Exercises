@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 
 #define MAXLINE 1000   // max char array length
 
@@ -11,7 +10,7 @@
 
 void expand(char s1[], char s2[]);
 
-void main()
+int main()
 {
     // declare variables to use in testing expand()
     char s1[MAXLINE], s2[MAXLINE];
@@ -26,7 +25,7 @@ void main()
     expand(s1, s2);
     printf("%s\n", s2);
 
-    system("pause");
+    return 0;
 }
 
 // expand: whenever two characters are hyphenated in the input, insert every character lying

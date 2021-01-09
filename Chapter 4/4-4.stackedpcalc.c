@@ -18,7 +18,7 @@ int getch(void);
 void ungetch(int);
 
 // reverse Polish calculator
-void main()
+int main()
 {
     int type;
     double top, op2;
@@ -79,7 +79,7 @@ void main()
             break;
         }
     }
-    system("pause");
+    return 0;
 }
 
 int sp = 0;             // next free stack position

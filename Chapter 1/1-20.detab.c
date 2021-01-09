@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 
 #define MAXLINE 1000 // maximum input line length
 #define TABSTOP 8
@@ -14,7 +13,7 @@ void detab (char d[], char e[]);
 int c, i, charCount;
 char in[MAXLINE], out[MAXLINE];
 
-void main()
+int main()
 {
 	// if end of file or max input length is not reached, record input in character array in[]
 	for (i = 0; (c = getchar()) != EOF && i < MAXLINE; i++)
@@ -29,8 +28,8 @@ void main()
 	// print both in and out
 	printf("%s", in);
 	printf("%s", out);
-	
-	system("pause");
+
+	return 0;
 }
 
 // detab: remove tabs from input by replacing them with blanks

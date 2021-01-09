@@ -26,7 +26,7 @@ char *alloc(int);
 // controls how many iterations getaline can be run for
 int numlines = 100;
 
-void main()
+int main()
 {
     char lines[MAXLEN];
     char *lineptr[MAXLINE];
@@ -53,7 +53,7 @@ void main()
     // print phase times to the screen
     printf("\nareadlines time: %.3f seconds\nreadlines time: %.3f seconds\n", p1secdiff, p2secdiff);
 
-    system("pause");
+    return 0;
 }
 
 // areadlines: read input lines, store in main() array

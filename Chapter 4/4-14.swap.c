@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 // Prompt is as follows:
@@ -14,7 +13,7 @@ x = y;\
 y = temp;\
 }
 
-void main()
+int main()
 {
     // tests swap when x and y are of type int; if successful, prints that "x = 2, y = 1"
     int x = 1;
@@ -23,5 +22,5 @@ void main()
     swap(int, x, y);
     printf("x = %d, y = %d\n", x, y);
     
-    system("pause");
+    return 0;
 }

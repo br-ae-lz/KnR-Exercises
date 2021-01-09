@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 #include "conio.h"  // non-standard header
 #define MAXLINE 1000
 
@@ -21,7 +20,7 @@
 void escape(char s[], char t[]);
 void altescape(char s[], char t[]);
 
-void main()
+int main()
 {
     // initializing some variables which will be of use in testing escape and altescape
     char s[MAXLINE], t[MAXLINE];
@@ -53,7 +52,7 @@ void main()
             printf("That input isn't recognised! Exiting...\n");
             break;
     }
-    system("pause");
+    return 0;
 }
 
 // escape: convert newlines and tabs in the input string into visible escape sequences (\n and \t)

@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 #include "string.h"
 
 #define MAXLINE     // max char array length
@@ -10,7 +9,7 @@
 
 int strrindex(char s[], char t[]);
 
-void main()
+int main()
 {
     // initialize some strings to test strrindex with
     char s[MAXLINE] = "here's hoping this ends up working!\0";
@@ -21,7 +20,7 @@ void main()
     printf("searched string: \"%s\", string to search for: \"%s\"\n", s, t);
     printf("strrindex output: %d\n", strrindex(s, t));
 
-    system("pause");
+    return 0;
 }
 
 // strrindex: return index of rightmost instance of t in s, -1 if none

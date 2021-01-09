@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 
 // Prompt is as follows:
 // Write a loop equivalent to the for loop above without using && or ||. 
@@ -8,7 +7,7 @@
 //for (i=0; i < lim-1 && (c=getchar()) != '\n' && c != EOF; ++i)
 	//s[i] = c;
 
-void main()
+int main()
 {
 	// declaration of things needed for the original and remade loop
 	int c, i, lim;
@@ -46,5 +45,5 @@ void main()
 	// print out resultant character array to verify because... why not?
 	printf("%s", s);
 	
-	system("pause");
+	return 0;
 }

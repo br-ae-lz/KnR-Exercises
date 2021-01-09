@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 #include "limits.h"
 #include "float.h"
 #include "math.h"
@@ -12,7 +11,7 @@
 void header (void);
 void computation (void);
 
-void main()
+int main()
 {
 	// run header and computation functions for comparison
 	printf("header:\n");
@@ -21,7 +20,7 @@ void main()
 	printf("computation:\n");
 	computation();
 	
-	system("pause");
+	return 0;
 }
 
 // header: determine the ranges of char, short, int, long (signed and unsigned), float, and double

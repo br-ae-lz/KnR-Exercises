@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 
 // Prompt is as follows:
 // Write the function any(s1,s2), which returns the first location in a string s1 where
@@ -9,7 +8,7 @@
 
 int any(char s1[], char s2[]);
 
-void main()
+int main()
 {
     // initialize some strings to test any
     char s1[] = "ah, what a life to live\0";
@@ -20,7 +19,7 @@ void main()
     int result = any(s1, s2);
     printf("result: %d\n", result);
 
-    system("pause");
+    return 0;
 }
 
 // any: return the first location in a string where any character from another occurs

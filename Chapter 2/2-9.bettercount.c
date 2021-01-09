@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 
 // Prompt is as follows:
 // In a two's complement number system, x &= (x-1) deletes the rightmost 1-bit
@@ -16,7 +15,7 @@
 
 int bettercount(unsigned x);
 
-void main() 
+int main() 
 {
     // initialize an integer to test out bettercount
     unsigned x = 11;    // 11 -> (...) 1011
@@ -24,8 +23,7 @@ void main()
     // run bettercount and print its result, which should be 3
     printf("%d\n", bettercount(x));
 
-    system("pause");
-
+    return 0;
 }
 
  // bettercount: count 1 bits in x

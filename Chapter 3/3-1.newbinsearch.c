@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 
 #define ARRAYLENGTH 20
 
@@ -11,7 +10,7 @@
 int binsearch(int x, int v[], int n);
 int newbinsearch(int x, int v[], int n);
 
-void main()
+int main()
 {
     // initialize a variable and an array to test (and time?) the binsearch functions
     int x = 2;
@@ -28,7 +27,7 @@ void main()
         printf("%d\n", newbinsearch(x, v, ARRAYLENGTH));
     printf("done new!\n");
 
-    system("pause");
+    return 0;
 }
 
 // binsearch: find x in v[0] <= v[1] <= ... <= v[n-1]

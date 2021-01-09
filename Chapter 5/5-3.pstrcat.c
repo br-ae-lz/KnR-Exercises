@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 #define MAXLINE 1000
 
@@ -21,7 +20,7 @@
 
 void pstrcat(char *, char *);
 
-void main()
+int main()
 {
     // tests pstrcat; if successful, prints "oh my!\n" to the screen
     char as[MAXLINE] = "oh ";
@@ -32,7 +31,7 @@ void main()
     pstrcat(s, t);
     printf(s);
 
-    system("pause");
+    return 0;
 }
 
 // pstrcat: concatenate t to end of s (s must be big enough)

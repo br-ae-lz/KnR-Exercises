@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 #include "math.h"
 #include "string.h"
 #include "ctype.h"
@@ -12,7 +11,7 @@
 
 long htoi(char s[]);
 
-void main()
+int main()
 {
     // initializes a long integer to hold the eventual output of the htoi function
     long result;
@@ -29,7 +28,8 @@ void main()
     result = htoi(s);
     // outputs the long returned from the htoi function
     printf("%d\n", result);
-    system("pause");
+    
+    return 0;
 }
 
 // htoi: convert an input string of hexadecimal digits (optionally prefaced by 0x or 0X) into

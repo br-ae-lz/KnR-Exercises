@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 
 // Prompt is as follows:
 // Rewrite the function lower, which converts upper case letters to lower case,
@@ -7,12 +6,12 @@
 
 int newlower(int c);
 
-void main()
+int main()
 {
     // test newlower by feeding it a 'C' (should print as 'c')
     printf("%c\n", newlower('C'));
 
-    system("pause");
+    return 0;
 }
 
  // newlower: convert c to lower case; ASCII only

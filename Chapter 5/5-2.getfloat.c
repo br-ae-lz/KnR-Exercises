@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <ctype.h>
 #include <math.h>
 
@@ -16,7 +15,7 @@
 int getch(void);
 void ungetch(int);
 
-void main()
+int main()
 {
     // tests getfloat; prints the float wrote to the array by getfloat to the screen
     int n, getfloat(float *);
@@ -25,7 +24,7 @@ void main()
     for (n = 0; n < SIZE && getfloat(&array[n]) != EOF; n++)
         printf("return: %.3f\n", array[n]);
 
-    system("pause");
+    return 0;
 }
 
 /* getint: get next integer from input into *pn */

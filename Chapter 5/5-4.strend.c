@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 #define MAXLINE 1000
@@ -10,7 +9,7 @@
 
 int strend(char *, char *);
 
-void main()
+int main()
 {
     // tests strend; if successful, prints "1" to the screen
     char *s = "all long strings must come to an end";
@@ -18,7 +17,7 @@ void main()
 
     printf("%d\n", strend(s, t));
 
-    system("pause");
+    return 0;
 }
 
 

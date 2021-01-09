@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 
 // Prompt is as follows:
 // Write a function invert(x,p,n) that returns x with the n bits that begin at
@@ -7,7 +6,7 @@
 
 unsigned invert(unsigned x, int p, int n);
 
-void main ()
+int main ()
 {
     // initialize a bunch of integers to test invert
     unsigned x = 100;   // 100 -> (...) 0110 0100 
@@ -20,7 +19,7 @@ void main ()
     // (...0 01.. are the bits selected from x, so x is 0111 1000 when they are inversed)
     printf("%d\n", result);
 
-    system("pause");
+    return 0;
 }
 
 // invert: return x with n bits to the right of position p inverted

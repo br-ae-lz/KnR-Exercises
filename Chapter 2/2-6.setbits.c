@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 
 // Prompt is as follows:
 // Write a function setbits(x,p,n,y) that returns x with the n bits that begin at
@@ -7,7 +6,7 @@
 
 unsigned setbits(unsigned x, int p, int n, unsigned y);
 
-void main ()
+int main ()
 {
     // initialize a bunch of integers to test setbits
     unsigned x = 100;   // 100 -> (...) 0110 0100 
@@ -21,7 +20,7 @@ void main ()
     // (.101 are the bits selected from y, they fit into x at ...0 01.. , so x is 0111 0100)
     printf("%d\n", result);
 
-    system("pause");
+    return 0;
 }
 
 // setbits: return x with n bits to the right of position p set to the rightmost n bits of y

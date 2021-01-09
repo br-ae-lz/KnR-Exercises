@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 #define MAXLEN 1000
@@ -10,7 +9,7 @@
 
 void recuritoa(int, char[]);
 
-void main()
+int main()
 {
     // tests recuritoa; if successful, prints "-2209534" to the screen
     int n = -2209534;
@@ -19,7 +18,7 @@ void main()
     recuritoa(n, s);
     printf("%s\n", s);
 
-    system("pause");
+    return 0;
 }
 
 // recuritoa: recursively convert n to characters in s

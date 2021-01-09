@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 #include "ctype.h"
 #include "string.h"
 #include "math.h"
@@ -12,13 +11,13 @@
 
 double sciatof(char s[]);
 
-void main()
+int main()
 {
     // initialise a string to test sciatof with; output result, which should be 0.00012345
     char s[MAXLINE] = "123.45E-6\0";
     printf("%.8f\n", sciatof(s));
 
-    system("pause");
+    return 0;
 }
 
 // atof: convert string s to double 

@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 
 // Prompt is as follows:
 // Write a function rightrot(x,n) that returns the value of the integer x rotated
@@ -7,7 +6,7 @@
 
 unsigned rightrot (unsigned x, int n);
 
-void main ()
+int main ()
 {
     // initialize some integers to test rightrot
     // 2623091161 -> 1001 1100 0101 1001 0011 0001 1101 1001
@@ -22,7 +21,7 @@ void main ()
     result = rightrot(x, n + 32);
     printf("%u\n", result);
 
-    system("pause");
+    return 0;
 }
 
 // rightrot: returns x with its bits rotated to the right by n positions (wraps around

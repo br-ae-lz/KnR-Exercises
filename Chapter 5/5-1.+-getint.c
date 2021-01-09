@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <ctype.h>
 
 #define SIZE 1000
@@ -11,7 +10,7 @@
 int getch(void);
 void ungetch(int);
 
-void main()
+int main()
 {
     // tests getint; prints the int wrote to the array by getint to the screen
     int n, array[SIZE], getint(int *);
@@ -19,7 +18,7 @@ void main()
     for (n = 0; n < SIZE && getint(&array[n]) != EOF; n++)
         printf("return: %d\n", array[n]);
 
-    system("pause");
+    return 0;
 }
 
 /* getint: get next integer from input into *pn */

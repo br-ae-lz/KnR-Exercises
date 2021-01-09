@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 #include "string.h"
 
 #define MAXLINE 1000
@@ -12,7 +11,7 @@
 void reverse(char s[]);
 void itob(int n, char s[], int b);
 
-void main()
+int main()
 {
     // initialize a string and use it to print itob's output for a hexadecimal number
     // (output should be -5D93E)
@@ -20,7 +19,7 @@ void main()
     itob(-383294, s, 16);
     printf("%s\n", s);
     
-    system("pause");
+    return 0;
 }
 
 /* reverse: reverse string s in place */

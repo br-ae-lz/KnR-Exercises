@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 #include "string.h"
 #include "math.h"
 
@@ -22,7 +21,7 @@ void itoall(int n, char s[]);
 // values can range from -128 to 127; there is no +128.) This version of itoa converts negative inputs
 // to positive values before progressing, yet there is no positive counterpart of such an input.
 
-void main()
+int main()
 {
     // declare and initialize variables to test out original itoa and new itoall; specifically, n is
     // the largest negative number that can be held in an integer, so itoa should fail with it
@@ -36,7 +35,7 @@ void main()
     itoall(n, s);
     printf("itoall output: %s\n", s);
     
-    system("pause");
+    return 0;
 }
 
 /* reverse: reverse string s in place */

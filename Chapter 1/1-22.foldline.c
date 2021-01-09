@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 
 #define MAXLINE 1000	   	// max line length
 #define MAXDISPLAYLINE 111 	// max display line length
@@ -16,7 +15,7 @@ void foldLine (char m[], char n[]);
 int c, i;
 char in[MAXLINE], out[MAXLINE];
 
-void main()
+int main()
 {
 	int i = 0;
 	
@@ -32,7 +31,7 @@ void main()
 	// print output
 	printf("%s", out);
 	
-	system("pause");
+	return 0;
 }
 
 // foldLine: if a line's length exceeds a maximum, fold it over onto another line

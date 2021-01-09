@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 // Prompt is as follows:
 // Rewrite the routines day_of_year and month_day with pointers instead of indexing.

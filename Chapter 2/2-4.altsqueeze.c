@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "stdlib.h"
 
 // Prompt is as follows:
 // Write an alternative version of squeeze(s1,s2) that deletes each character in
@@ -7,7 +6,7 @@
 
 void altsqueeze(char s1[], char s2[]);
 
-void main()
+int main()
 {
     // initialize some strings to test altsqueeze
     char s1[] = "oh, what a nice day\0";
@@ -18,7 +17,7 @@ void main()
     altsqueeze(s1, s2);
     printf("result: %s\n", s1);
 
-    system("pause");
+    return 0;
 }
 
 // altsqueeze: delete all characters included in s2 from s1
